@@ -11,6 +11,7 @@ public class PhoneNumber2 {
 	static int o7=4;
 	static int o8=3;
 	static int o9=4;
+	static String[]letters=new String[] {"abc","def","ghi","jkl", "mnop", "qrs", "tuv", "wxyz"};
 	public static void main(String[] args) {
 		String phoneNumber = JOptionPane.showInputDialog("What is your phone number?");
 		char oo0 = phoneNumber.charAt(0);
@@ -131,12 +132,12 @@ public class PhoneNumber2 {
 		}
 	
 
-	public char myLetter(char i){
+	public char myLetter(char i, int counter){
 		char myLetter = ' ';
 		if(i=='1') {
 			myLetter = '1';
 		}else if(i=='2') {
-			
+			myLetter = letters[i-48].charAt(counter);
 		}else if(i=='3') {
 			
 		}else if(i=='4') {
