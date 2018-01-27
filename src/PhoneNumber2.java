@@ -1,3 +1,7 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+
 import javax.swing.JOptionPane;
 
 public class PhoneNumber2 {
@@ -11,8 +15,9 @@ public class PhoneNumber2 {
 	static int o7=4;
 	static int o8=3;
 	static int o9=4;
-	static String[]letters=new String[] {"abc","def","ghi","jkl", "mnop", "qrs", "tuv", "wxyz"};
-	public static void main(String[] args) {
+	static char miLetter = ' ';
+	static String[]letters=new String[] {"000","111","abc","def","ghi","jkl", "mno", "pqrs", "tuv", "wxyz"};
+	public static void main(String[] args) throws FileNotFoundException {
 		String phoneNumber = JOptionPane.showInputDialog("What is your phone number?");
 		char oo0 = phoneNumber.charAt(0);
 		char oo1 = phoneNumber.charAt(1);
@@ -38,87 +43,139 @@ public class PhoneNumber2 {
 		int ho = 0;
 		int io = 0;
 		int jo = 0;
+		int j1 = 3;
+		int k1 = 3;
+		int l1 = 3;
+		int m1 = 3;
+		int n1 = 3;
+		int o1 = 3;
+		int p1 = 3;
+		int q1 = 3;
+		int r1 = 3;
+		int s1 = 3;
+		String myWord = "";
+		PrintWriter pw = new PrintWriter(new File("phone.txt"));
+				
 		
-		for(int j = 0;j<3;j++) {
+		for(int j = 0;j<j1;j++) {
+
 			if(oo0=='7'||oo0=='9'&& ao==0) {
-				j=-1;
+				j1=4;
 				ao=1;
 			}
 			if(oo0=='1'||oo0=='0') {
-				j=2;
+				j1=1;
 			}
-			for(int k = 0;k<3;k++) {
+			for(int k = 0;k<k1;k++) {
 				if(oo1=='7'||oo1=='9'&& bo==0) {
-					k=-1;
+					k1=4;
 					bo=1;
 				}
 				if(oo1=='1'||oo1=='0') {
-					k=2;
+					k1=1;
 				}
-				for(int l = 0;l<3;l++) {
+				for(int l = 0;l<l1;l++) {
 					if(oo2=='7'||oo2=='9'&& co==0) {
-						l=-1;
+						l1=4;
 						co=1;
 					}
 					if(oo2=='1'||oo2=='0') {
-						l=2;
+						l1=1;
 					}
-					for(int m = 0;m<3;m++) {
+					for(int m = 0;m<m1;m++) {
 						if(oo3=='7'||oo3=='9'&& doo==0) {
-							m=-1;
+							m1=4;
 							doo=1;
 						}
 						if(oo3=='1'||oo3=='0') {
-							m=2;
+							m1=1;
 						}
-						for(int n = 0;n<3;n++) {
+						for(int n = 0;n<n1;n++) {
 							if(oo4=='7'||oo4=='9'&& eo==0) {
-								n=-1;
+								n1=4;
 								eo=1;
 							}
 							if(oo4=='1'||oo4=='0') {
-								n=2;
+								n1=1;
 							}
-							for(int o = 0;o<3;o++) {
+							for(int o = 0;o<o1;o++) {
 								if(oo5=='7'||oo5=='9'&& fo==0) {
-									o=-1;
+									o1=4;
 									fo=1;
 								}
 								if(oo5=='1'||oo5=='0') {
-									o=2;
+									o1=1;
 								}
-								for(int p = 0;p<3;p++) {
+								for(int p = 0;p<p1;p++) {
 									if(oo6=='7'||oo6=='9'&& go==0) {
-										p=-1;
+										p1=4;
 										go=1;
 									}
 									if(oo6=='1'||oo6=='0') {
-										p=2;
+										p1=1;
 									}
-									for(int q = 0;q<3;q++) {
+									for(int q = 0;q<q1;q++) {
 										if(oo7=='7'||oo7=='9'&& ho==0) {
-											q=-1;
+											q1=4;
 											ho=1;
 										}
 										if(oo7=='1'||oo7=='0') {
-											q=2;
+											q1=1;
 										}
-										for(int r = 0;r<3;r++) {
+										for(int r = 0;r<r1;r++) {
 											if(oo8=='7'||oo8=='9'&& io==0) {
-												r=-1;
+												r1=4;
 												io=1;
 											}
 											if(oo8=='1'||oo8=='0') {
-												r=2;
+												r1=1;
 											}
-												for(int s = 0;s<3;s++) {
+												for(int s = 0;s<s1;s++) {
 													if(oo9=='7'||oo9=='9'&& jo==0) {
-														s=-1;
+														s1=4;
 														jo=1;
 													}
 													if(oo9=='1'||oo9=='0') {
-														s=2;
+														s1=1;
 													}
+													//start
+													myLetter(oo0,j);
+													//System.out.println(miLetter);
+													myWord = myWord + miLetter;
+													myLetter(oo1,k);
+													//System.out.println(miLetter);
+													myWord = myWord + miLetter;
+													myLetter(oo2,l);
+													//System.out.println(miLetter);
+													myWord = myWord + miLetter;
+													     myWord = myWord + "-";
+													myLetter(oo3,m);
+													//System.out.println(miLetter);
+													myWord = myWord + miLetter;
+													myLetter(oo4,n);
+													//System.out.println(miLetter);
+													myWord = myWord + miLetter;
+													myLetter(oo5,o);
+													//System.out.println(miLetter);
+													myWord = myWord + miLetter;
+													     myWord = myWord + "-";
+													myLetter(oo6,p);
+													//System.out.println(miLetter);
+													myWord = myWord + miLetter;
+													myLetter(oo7,q);
+													//System.out.println(miLetter);
+													myWord = myWord + miLetter;
+													myLetter(oo8,r);
+													//System.out.println(miLetter);
+													myWord = myWord + miLetter;
+													myLetter(oo9,s);
+													//System.out.println(miLetter);
+													myWord = myWord + miLetter;
+													
+													System.out.println(myWord);
+													pw.println(myWord);
+													myWord = "";
+													//end
 												}
 											}
 										}
@@ -129,35 +186,39 @@ public class PhoneNumber2 {
 					}
 				}
 			}
+		pw.close();
 		}
 	
 
-	public char myLetter(char i, int counter){
-		char myLetter = ' ';
-		if(i=='1') {
-			myLetter = '1';
-		}else if(i=='2') {
-			myLetter = letters[i-48].charAt(counter);
-		}else if(i=='3') {
-			
-		}else if(i=='4') {
-			
-		}else if(i=='5') {
-			
-		}else if(i=='6') {
-			
-		}else if(i=='7') {
-			
-		}else if(i=='8') {
-			
-		}else if(i=='9') {
-			
-		}else if(i=='0') {
-			myLetter = '0';
-		}else {
-			
-		}
-		
-		return myLetter;
+	public static char myLetter(char i, int counter){
+		miLetter = ' ';
+		miLetter = letters[i-48].charAt(counter);
+	
+		return miLetter;
 	}
+	/*	if(i=='1') {
+	myLetter = '1';
+}else if(i=='2') {
+	myLetter = letters[i-48].charAt(counter);
+}else if(i=='3') {
+	myLetter = letters[i-48].charAt(counter);
+}else if(i=='4') {
+	
+}else if(i=='5') {
+	
+}else if(i=='6') {
+	
+}else if(i=='7') {
+	
+}else if(i=='8') {
+	
+}else if(i=='9') {
+	
+}else if(i=='0') {
+	myLetter = '0';
+}else {
+	
+}
+*/
+	
 }
