@@ -172,8 +172,9 @@ public class PhoneNumber2 {
 													//System.out.println(miLetter);
 													myWord = myWord + miLetter;
 													
-													System.out.println(myWord);
+													//System.out.println(myWord);
 													pw.println(myWord);
+													if(myWord.substring(0, 3))
 													myWord = "";
 													//end
 												}
