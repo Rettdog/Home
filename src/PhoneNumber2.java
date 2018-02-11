@@ -1,6 +1,9 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
@@ -53,8 +56,32 @@ public class PhoneNumber2 {
 		int q1 = 3;
 		int r1 = 3;
 		int s1 = 3;
+		String firstWord = "";
+		String middleWord= "";
+		String lastWord="";
 		String myWord = "";
 		PrintWriter pw = new PrintWriter(new File("phone.txt"));
+		File file = new File("dictionary.txt");
+		ArrayList<String> array = new ArrayList<String>();
+		PrintWriter prw = new PrintWriter(new File("finish.txt"));
+		//File filer = new File("dict.txt");
+		Scanner sc = new Scanner(file);
+		String line;
+		while (sc.hasNextLine()) {
+			line = sc.nextLine();
+			//if (line.length() == 4 || line.length() == 3) {
+				
+				array.add(line);
+				//System.out.println(array.size());
+			//}
+
+		}
+		
+		
+		sc.close();
+		
+	
+
 				
 		
 		for(int j = 0;j<j1;j++) {
@@ -142,40 +169,65 @@ public class PhoneNumber2 {
 													myLetter(oo0,j);
 													//System.out.println(miLetter);
 													myWord = myWord + miLetter;
+													firstWord = firstWord + miLetter;
 													myLetter(oo1,k);
 													//System.out.println(miLetter);
 													myWord = myWord + miLetter;
+													firstWord = firstWord + miLetter;
 													myLetter(oo2,l);
 													//System.out.println(miLetter);
 													myWord = myWord + miLetter;
+													firstWord = firstWord + miLetter;
 													     myWord = myWord + "-";
 													myLetter(oo3,m);
 													//System.out.println(miLetter);
 													myWord = myWord + miLetter;
+													middleWord = middleWord + miLetter;
 													myLetter(oo4,n);
 													//System.out.println(miLetter);
 													myWord = myWord + miLetter;
+													middleWord = middleWord + miLetter;
 													myLetter(oo5,o);
 													//System.out.println(miLetter);
 													myWord = myWord + miLetter;
+													middleWord = middleWord + miLetter;
 													     myWord = myWord + "-";
 													myLetter(oo6,p);
 													//System.out.println(miLetter);
 													myWord = myWord + miLetter;
+													lastWord = lastWord + miLetter;
 													myLetter(oo7,q);
 													//System.out.println(miLetter);
 													myWord = myWord + miLetter;
+													lastWord = lastWord + miLetter;
 													myLetter(oo8,r);
 													//System.out.println(miLetter);
 													myWord = myWord + miLetter;
+													lastWord = lastWord + miLetter;
 													myLetter(oo9,s);
 													//System.out.println(miLetter);
 													myWord = myWord + miLetter;
+													lastWord = lastWord + miLetter;
 													
 													//System.out.println(myWord);
 													pw.println(myWord);
-													if(myWord.substring(0, 3))
+													//System.out.println(middleWord);
+													if((array.contains(firstWord))) {
+														prw.println(firstWord.toUpperCase()+"-"+middleWord+"-"+lastWord);
+														//System.out.println(myWord);
+													}else if((array.contains(middleWord))){
+														prw.println(firstWord+"-"+middleWord.toUpperCase()+"-"+lastWord);
+														//System.out.println(myWord);
+													}else if(array.contains(lastWord)) {
+														prw.println(firstWord+"-"+middleWord+"-"+lastWord.toUpperCase());
+														//System.out.println(myWord);
+													}else {
+													//	System.out.println(hm.get(firstWord));
+													}
 													myWord = "";
+													firstWord = "";
+													middleWord = "";
+													lastWord = "";
 													//end
 												}
 											}
@@ -188,6 +240,7 @@ public class PhoneNumber2 {
 				}
 			}
 		pw.close();
+		prw.close();
 		}
 	
 

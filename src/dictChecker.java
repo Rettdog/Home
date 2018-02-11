@@ -9,12 +9,14 @@ public class dictChecker {
 		File file = new File("dict.txt");
 		Scanner sc = new Scanner(file);
 		String line;
-for(int i = 0;i<1;) {
-	line = sc.next("dict.txt");
-if(line.length()==4||line.length()==3) {
-	pw.println(sc.nextLine());
-}
-	
-}
-}
+		while (sc.hasNextLine()) {
+			line = sc.nextLine();
+			if (line.length() == 4 || line.length() == 3) {
+				pw.println(line.toLowerCase());
+			}
+
+		}
+		sc.close();
+		pw.close();
+	}
 }
