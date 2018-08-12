@@ -26,7 +26,7 @@ public class BirthdayCalculator implements ActionListener {
 		text1.setText("00/00/00 00 ");
 		text2 = new JTextField(10);
 		text2.setText("00/00/00 00 ");
-		text3 = new JTextField(20);
+		text3 = new JTextField(30);
 		button = new JButton("Calculate");
 		button.addActionListener(this);
 		panel.add(text1);
@@ -51,7 +51,7 @@ public class BirthdayCalculator implements ActionListener {
 		int year2 = Integer.parseInt(text2.getText().substring(6, 8));
 		int hour1 = Integer.parseInt(text1.getText().substring(9, 11));
 		int hour2 = Integer.parseInt(text2.getText().substring(9, 11));
-		System.out.println(month1+" "+month2+" "+day1+" "+day2);
+		//System.out.println(month1+" "+month2+" "+day1+" "+day2);
 		if(year1<year2) {
 			int years = year2 - year1-1;
 			int day = 365-dateToInt(month1,day1)+dateToInt(month2,day2);
@@ -62,7 +62,7 @@ public class BirthdayCalculator implements ActionListener {
 		}
 		//firstday+days*24+lastday
 		int hours = 24-hour1+days*24+hour2;
-		text3.setText(days+" days or "+hours+" hours");
+		text3.setText(days+" days or "+hours+" hours or "+hours*3600+" seconds");
 	}
 	public int dateToInt(int month, int day) {
 		int integer = 0;
