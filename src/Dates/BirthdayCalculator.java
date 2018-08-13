@@ -58,7 +58,7 @@ public class BirthdayCalculator implements ActionListener {
 			days = day+365*years;
 			
 		}else {
-			days = dateToInt(month2,day2)-dateToInt(month1,day1)-1;
+			days = dateToInt(month2,day2)-dateToInt(month1,day1);
 		}
 		//firstday+days*24+lastday
 		int hours = 24-hour1+days*24+hour2;
