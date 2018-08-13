@@ -71,6 +71,7 @@ public class BirthdayCalculator implements ActionListener {
 			integer+=0;
 			break;
 		case 2:
+			//days in previous months, not including leap years
 			integer+=31;
 			break;
 		case 3:
